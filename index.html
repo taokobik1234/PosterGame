@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green City Scavenger - Game Poster</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Fredoka+One&family=Roboto:wght@300;400;700&family=Bangers&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .poster {
+            width: 297mm;
+            height: 420mm;
+            max-width: 100vw;
+            max-height: 100vh;
+            background: linear-gradient(135deg, #87CEEB 0%, #98FB98 50%, #90EE90 100%);
+            position: relative;
+            overflow: hidden;
+            font-family: 'Roboto', sans-serif;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            margin: auto;
+        }
+
+
+        .title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 4.5rem;
+            text-align: center;
+            margin-top: 10px;
+            background: linear-gradient(45deg, #2E8B57, #32CD32, #228B22);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            transform: perspective(500px) rotateY(-5deg);
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes titleGlow {
+            from { filter: drop-shadow(0 0 10px #32CD32); }
+            to { filter: drop-shadow(0 0 20px #228B22); }
+        }
+
+        .subtitle {
+            font-family: 'Bangers', cursive;
+            font-size: 2.2rem;
+            text-align: center;
+            color: #FF6347;
+            margin-top: 10px;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .storyline {
+            background: rgba(255,255,255,0.9);
+            margin: 10px 40px;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border: 3px solid #32CD32;
+        }
+
+        .storyline h3 {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            color: #2E8B57;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .storyline p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+            text-align: justify;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 40px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(50,205,50,0.9), rgba(46,139,87,0.9));
+            padding: 20px;
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            transform: perspective(1000px) rotateY(10deg);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:nth-child(even) {
+            transform: perspective(1000px) rotateY(-10deg);
+        }
+
+        .feature-card:hover {
+            transform: perspective(1000px) rotateY(0deg) scale(1.05);
+        }
+
+        .feature-card h4 {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .trash-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .trash-item {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.6;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .trash-item:nth-child(1) { top: 15%; left: 85%; animation-delay: 0s; }
+        .trash-item:nth-child(2) { top: 25%; left: 10%; animation-delay: 1s; }
+        .trash-item:nth-child(3) { top: 45%; left: 90%; animation-delay: 2s; }
+        .trash-item:nth-child(4) { top: 65%; left: 5%; animation-delay: 3s; }
+        .trash-item:nth-child(5) { top: 80%; left: 15%; animation-delay: 4s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .call-to-action {
+            background: linear-gradient(45deg, #FF6347, #FF4500);
+            color: white;
+            padding: 20px;
+            margin: 30px 40px 50px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(255,99,71,0.4);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 10px 30px rgba(255,99,71,0.4); }
+            50% { box-shadow: 0 15px 40px rgba(255,99,71,0.7); }
+            100% { box-shadow: 0 10px 30px rgba(255,99,71,0.4); }
+        }
+
+        .call-to-action h3 {
+            font-family: 'Bangers', cursive;
+            font-size: 2.5rem;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .call-to-action p {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+        }
+
+        .recycle-symbol {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 4rem;
+            color: #32CD32;
+            animation: spin 10s linear infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .trees {
+            position: absolute;
+            bottom: 180px;
+            left: 20px;
+            font-size: 3rem;
+            color: #228B22;
+            z-index: 1;
+        }
+
+        .trees span {
+            display: inline-block;
+            margin-right: 10px;
+            animation: sway 4s ease-in-out infinite;
+        }
+
+        .trees span:nth-child(2) { animation-delay: 1s; }
+        .trees span:nth-child(3) { animation-delay: 2s; }
+
+        @keyframes sway {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(3deg); }
+            75% { transform: rotate(-3deg); }
+        }
+
+        @media (max-width: 800px) {
+            .poster {
+                width: 100vw;
+                height: 140vw;
+            }
+            
+            .title {
+                font-size: 3rem;
+                margin-top: 20px;
+            }
+            
+            .subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+                margin: 20px 20px;
+            }
+            
+            .storyline {
+                margin: 20px 20px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="poster">
+        <div class="recycle-symbol">♻️</div>
+        
+        <h1 class="title">GREEN CITY<br>SCAVENGER</h1>
+        <h2 class="subtitle">SAVE YOUR PLANET!</h2>
+        
+        <div class="storyline">
+            <h3>🌍 Your Mission</h3>
+            <p>The city is drowning in waste! As an eco-hero, you must navigate through polluted streets, collect scattered trash, and sort waste properly to restore the environment. Every piece of garbage you pick up brings the city one step closer to becoming a green paradise. Race against time, unlock new areas, and discover the satisfying power of cleaning up your world!</p>
+        </div>
+        
+        <div class="features">
+            <div class="feature-card">
+                <h4>🗑️ Smart Sorting</h4>
+                <p>Master the art of waste separation! Sort plastic, metal, organic, and paper waste into correct bins to earn maximum points and unlock achievements.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h4>🏃‍♂️ Fast-Paced Action</h4>
+                <p>Race through city streets, parks, and neighborhoods. Quick reflexes and strategic thinking are key to becoming the ultimate scavenger!</p>
+            </div>
+            
+            <div class="feature-card">
+                <h4>🌱 City Transformation</h4>
+                <p>Watch the city transform as you clean! Polluted areas become green spaces, and wildlife returns to create a thriving ecosystem.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h4>🏆 Eco Achievements</h4>
+                <p>Unlock special rewards, upgrade your equipment, and compete with friends to see who can create the greenest city!</p>
+            </div>
+        </div>
+        
+        <div class="call-to-action">
+            <h3>PLAY NOW!</h3>
+            <p>BE THE CHANGE YOUR CITY NEEDS</p>
+        </div>
+        
+        <div class="trash-icons">
+            <div class="trash-item">🥤</div>
+            <div class="trash-item">📰</div>
+            <div class="trash-item">🍌</div>
+            <div class="trash-item">🥫</div>
+            <div class="trash-item">🛍️</div>
+        </div>
+        
+        <!-- <div class="trees">
+            <span>🌳</span>
+            <span>🌲</span>
+            <span>🌳</span>
+        </div> -->
+        
+
+    </div>
+</body>
+</html>
